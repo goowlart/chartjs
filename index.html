@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>My Chart</title>
+</head>
+
+
+<body>
+  <div class="container">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+    let massPopChart = new Chart(myChart, {
+      type: 'bar',
+      data: {
+        labels: ['Google Chrome', 'Internet Explorer', 'Mozilla Firefox', 'Safari'],
+        datasets: [{
+          label: 'Popularity',
+          data: [
+            70,
+            33.23,
+            23.79,
+            7.25
+          ],
+
+          backgroundColor: [
+            '#00008B',
+            '#0000CD',
+            '#0000FF',
+            '#4169E1'
+          ],
+          borderWidth: 1,
+          borderColor: '#777',
+          hoverBorderWidth: 3,
+          hoverBorderColor: '#191970'
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'Most used browsers in the world',
+          fontSize: 25
+        },
+
+      }
+    });
+  </script>
+</body>
+
+</html>
